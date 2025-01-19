@@ -10,9 +10,12 @@ public class Pause : MonoBehaviour
 {
     private bool _isPaused;
     private bool _isAnimating;
+    private bool _isMusicOff;
+    private bool _isSoundOff;
     
-    public GameObject PauseUI;
-    public RectTransform rectTransform;
+    public GameObject PlayerHUD;
+    public RectTransform PauseRectTransform;
+
     
     [Header("Buttons")]
     public Button musicButton;
@@ -28,12 +31,13 @@ public class Pause : MonoBehaviour
 
     private void Start()
     {
-        rectTransform.localScale = Vector3.zero;
+        PauseRectTransform.localScale = Vector3.zero;
+        _isPaused = false;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
         }
@@ -42,12 +46,15 @@ public class Pause : MonoBehaviour
     public void PauseGame()
     {
         if (_isAnimating) return;
+        
         _isAnimating = true;
+        
         if (_isPaused)
         {
             _isPaused = false;
+            PlayerHUD.SetActive(!_isPaused);
             Time.timeScale = 1f;
-            rectTransform.DOScale(Vector3.zero, .5f).SetEase(Ease.OutBack).OnComplete(() =>
+            PauseRectTransform.DOScale(Vector3.zero, .5f).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 _isAnimating = false;
             });
@@ -55,7 +62,8 @@ public class Pause : MonoBehaviour
         else
         {
             _isPaused = true;
-            rectTransform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack).OnComplete(() =>
+            PlayerHUD.SetActive(!_isPaused);
+            PauseRectTransform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 _isAnimating = false;
                 Time.timeScale = 0f;
@@ -65,30 +73,24 @@ public class Pause : MonoBehaviour
 
     public void ExitToMainMenu()
     {
+        _isPaused = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void ToggleMusic()
     {
-        if (true)
-        {
-            musicButton.GetComponent<Image>().sprite = musicOff;
-        }
-        else
-        {
-            //soundButton.GetComponent<Image>().sprite = musicOn;
-        }
+        _isMusicOff = !_isMusicOff;
+        musicButton.GetComponent<Image>().sprite = _isMusicOff ? musicOff : musicOn;
+        
+        AudioController.Instance.ToggleMusic(_isMusicOff);
     }
 
     public void ToggleSound()
     {
-        if (true)
-        {
-            soundButton.GetComponent<Image>().sprite = soundOff;
-        }
-        else
-        {
-            //soundButton.GetComponent<Image>().sprite = soundOn;
-        }
+        _isSoundOff = !_isSoundOff;
+        soundButton.GetComponent<Image>().sprite = _isSoundOff ? soundOff : soundOn;
+        
+        AudioController.Instance.ToggleSound(_isSoundOff);
     }
 }
