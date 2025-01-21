@@ -33,17 +33,6 @@ public class Pause : MonoBehaviour
         PauseRectTransform.localScale = Vector3.zero;
         _isPaused = false;
     }
-
-    private void OnEnable()
-    {
-        InputManager.onPause += PauseGame;
-    }
-
-    private void OnDisable()
-    {
-        InputManager.onPause -= PauseGame;
-    }
-
     public void PauseGame()
     {
         if (_isAnimating) return;
