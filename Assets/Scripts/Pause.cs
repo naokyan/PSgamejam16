@@ -33,6 +33,15 @@ public class Pause : MonoBehaviour
         PauseRectTransform.localScale = Vector3.zero;
         _isPaused = false;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
+
     public void PauseGame()
     {
         if (_isAnimating) return;
