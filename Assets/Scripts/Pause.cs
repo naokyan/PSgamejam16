@@ -13,7 +13,11 @@ public class Pause : MonoBehaviour
     private bool _isMusicOff;
     private bool _isSoundOff;
     
-    public GameObject PlayerHUD;
+    [Header("Player HUD")]
+    public RectTransform BarsParnelRectTransform;
+    public RectTransform WeaponImageRectTransform;
+    
+    [Header("Pause menu")]
     public RectTransform PauseRectTransform;
     
     [Header("Buttons")]
@@ -51,8 +55,9 @@ public class Pause : MonoBehaviour
         if (_isPaused)
         {
             _isPaused = false;
-            PlayerHUD.SetActive(!_isPaused);
             Time.timeScale = 1f;
+            BarsParnelRectTransform.DOAnchorPosX(250f,.5f, true);
+            WeaponImageRectTransform.DOAnchorPosX(-50f, .5f, true);
             PauseRectTransform.DOScale(Vector3.zero, .5f).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 _isAnimating = false;
@@ -61,7 +66,8 @@ public class Pause : MonoBehaviour
         else
         {
             _isPaused = true;
-            PlayerHUD.SetActive(!_isPaused);
+            BarsParnelRectTransform.DOAnchorPosX(-250f,.5f, true);
+            WeaponImageRectTransform.DOAnchorPosX(250f, .5f, true);
             PauseRectTransform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 _isAnimating = false;
