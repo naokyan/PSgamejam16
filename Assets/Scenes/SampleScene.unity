@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78fa359b665271a458ebd4236ca87901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHUD: {fileID: 1644858137}
+  BarsParnelRectTransform: {fileID: 0}
+  WeaponImageRectTransform: {fileID: 0}
   PauseRectTransform: {fileID: 916148045}
   musicButton: {fileID: 916148047}
   soundButton: {fileID: 916148046}
@@ -545,7 +546,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1644858136
+--- !u!1001 &2022119013
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -614,17 +615,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
---- !u!1 &1644858137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2825714811089190291, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
-  m_PrefabInstance: {fileID: 1644858136}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 504993191}
-  - {fileID: 1644858136}
   - {fileID: 916148044}
   - {fileID: 1369344173}
+  - {fileID: 2022119013}
