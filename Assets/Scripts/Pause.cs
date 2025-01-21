@@ -15,7 +15,6 @@ public class Pause : MonoBehaviour
     
     public GameObject PlayerHUD;
     public RectTransform PauseRectTransform;
-
     
     [Header("Buttons")]
     public Button musicButton;
@@ -35,12 +34,14 @@ public class Pause : MonoBehaviour
         _isPaused = false;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
+        InputManager.onPause += PauseGame;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.onPause -= PauseGame;
     }
 
     public void PauseGame()
