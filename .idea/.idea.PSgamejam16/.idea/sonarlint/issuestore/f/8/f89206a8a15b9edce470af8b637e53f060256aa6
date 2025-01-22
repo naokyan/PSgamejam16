@@ -1,0 +1,7 @@
+
+vcsharpsquid:S3903".Move 'AudioController' into a named namespace.(úøÖÿÿÿÿÿJ$bc1805af-fa6c-488a-a713-71c8771c67e3
+Œcsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(äªùÿÿÿÿJ$4272aacc-ccb7-4468-b55f-3036848484b5
+Œcsharpsquid:S1104
+"DMake this field 'private' and encapsulate it in a 'public' property.(ë‡ü†úÿÿÿÿJ$47ba809d-76d0-4614-bd79-c1a05d79ec14
+csharpsquid:S2223	"EChange the visibility of 'Instance' or make it 'const' or 'readonly'.(äªùÿÿÿÿJ$7696ce75-4797-487f-b7cc-fbdea1cb1b29
+˜csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ä“±ÏJ$2dc4aa36-828b-4baf-8908-3ab5ff903696
