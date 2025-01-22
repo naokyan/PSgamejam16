@@ -18,11 +18,11 @@ public class AudioController : MonoBehaviour
 
     public void ToggleMusic(bool muted)
     {
-        mixer.SetFloat("Music",muted ? -80f : 0f);
+        mixer.SetFloat("Music", muted ? -80f : 0f);
     }
 
     public void ToggleSound(bool muted)
     {
-        mixer.SetFloat("SFX",muted ? -80f : 0f);
+        mixer.SetFloat("SFX", muted ? -80f : 0f);
     }
 }
