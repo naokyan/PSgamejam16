@@ -100,4 +100,6 @@ public class Player : MonoBehaviour
         hpBar.value = currentHp;
     }
     public void SetWeaponImage(Sprite icon) { weaponImage.sprite = icon; }
+
+    public void SetAmmoText(int currentAmount,int maxAmount) { ammoCountText.text = currentAmount + " / " + maxAmount; } 
 }
