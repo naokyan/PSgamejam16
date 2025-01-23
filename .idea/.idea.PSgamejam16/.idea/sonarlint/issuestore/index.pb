@@ -5,3 +5,5 @@ J
 Assets/Scripts/MainMenu.cs,0\0\00be338ff5b861e87ad4608d74b1358c856e0403
 Q
 !Assets/Scripts/AudioController.cs,f\8\f89206a8a15b9edce470af8b637e53f060256aa6
+H
+Assets/Scripts/Player.cs,3\2\32367782be3d16f3ab4628d48a5765e7c8773b11
