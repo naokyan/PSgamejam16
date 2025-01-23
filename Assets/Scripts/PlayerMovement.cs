@@ -1,9 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography;
-using System.Threading;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,14 +6,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
 
     private Vector2 _movement;
-
     private Rigidbody2D _rb;
     private Animator _animator;
 
-    private const string _horizontal = "Horizontal"; 
-    private const string _vertical = "Vertical";
-    private const string _lastHorizontal = "LastHorizontal";
-    private const string _lastVertical = "LastVertical";
+    private const string _aimHorizontal = "AimHorizontal";
+    private const string _aimVertical = "AimVertical";
+    private const string _aimLastHorizontal = "AimLastHorizontal";
+    private const string _aimLastVertical = "AimLastVertical";
+
+    private const string _moveHorizontal = "MoveHorizontal";
+    private const string _moveVertical = "MoveVertical";
 
     private bool _canDash = true;
     private bool _isDashing;
@@ -28,44 +25,48 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _dashingCooldown = 1f;
     [SerializeField] private TrailRenderer _tr;
 
+    private Camera _mainCamera;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _mainCamera = Camera.main;
     }
 
     private void Update()
     {
-        if (_isDashing)
-        {
-            return;
-        }
+        if (_isDashing) return;
 
         _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
+        _animator.SetFloat(_moveHorizontal, _movement.x);
+        _animator.SetFloat(_moveVertical, _movement.y);
+
         _rb.velocity = _movement * _moveSpeed;
 
-        _animator.SetFloat(_horizontal, _movement.x);
-        _animator.SetFloat(_vertical, _movement.y);
+        Vector2 mousePosition = InputManager.MousePosition;
+        Vector2 aimDirection = (mousePosition - _rb.position).normalized;
 
+        _animator.SetFloat(_aimHorizontal, aimDirection.x);
+        _animator.SetFloat(_aimVertical, aimDirection.y);
+
+        
+        if (aimDirection != Vector2.zero)
+        {
+            _animator.SetFloat(_aimLastHorizontal, aimDirection.x);
+            _animator.SetFloat(_aimLastVertical, aimDirection.y);
+        }
+
+        _canDash = false;//players can only dash if there is movement inputs
         if (_movement != Vector2.zero)
         {
-            _animator.SetFloat(_lastHorizontal, _movement.x);
-            _animator.SetFloat(_lastVertical, _movement.y);
+            _canDash = true;
         }
 
-        if (InputManager.OnDashPressed.WasPressedThisFrame() && _canDash) 
+        if (InputManager.OnDashPressed.WasPressedThisFrame() && _canDash)
         {
             StartCoroutine(Dash());
-        }
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (_isDashing)
-        {
-            return;
         }
     }
 
@@ -74,16 +75,13 @@ public class PlayerMovement : MonoBehaviour
         _canDash = false;
         _isDashing = true;
 
-        // Determine the dash direction
-        Vector2 dashDirection = _movement.normalized;
+        Vector2 dashDirection = _rb.velocity.normalized;
 
-        // If no movement input, use the last faced direction
         if (dashDirection == Vector2.zero)
         {
-            dashDirection = new Vector2(_animator.GetFloat(_lastHorizontal), _animator.GetFloat(_lastVertical)).normalized;
+            dashDirection = new Vector2(_animator.GetFloat(_aimLastHorizontal), _animator.GetFloat(_aimLastVertical)).normalized;
         }
 
-        // Apply the dash velocity
         _rb.velocity = dashDirection * _dashingPower;
         _tr.emitting = true;
 
@@ -92,9 +90,8 @@ public class PlayerMovement : MonoBehaviour
         _tr.emitting = false;
         _isDashing = false;
 
-        // Cooldown before dashing again
         yield return new WaitForSeconds(_dashingCooldown);
         _canDash = true;
     }
-
 }
+
