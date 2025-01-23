@@ -15,7 +15,7 @@ public class Pause : MonoBehaviour
     
     [Header("Player HUD")]
     public RectTransform BarsParnelRectTransform;
-    public RectTransform WeaponImageRectTransform;
+    public RectTransform WeaponPanelRectTransform;
     
     [Header("Pause menu")]
     public RectTransform PauseRectTransform;
@@ -57,7 +57,7 @@ public class Pause : MonoBehaviour
             _isPaused = false;
             Time.timeScale = 1f;
             BarsParnelRectTransform.DOAnchorPosX(250f,.5f, true);
-            WeaponImageRectTransform.DOAnchorPosX(-50f, .5f, true);
+            WeaponPanelRectTransform.DOAnchorPosX(0, .5f, true);
             PauseRectTransform.DOScale(Vector3.zero, .5f).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 _isAnimating = false;
@@ -67,7 +67,7 @@ public class Pause : MonoBehaviour
         {
             _isPaused = true;
             BarsParnelRectTransform.DOAnchorPosX(-250f,.5f, true);
-            WeaponImageRectTransform.DOAnchorPosX(250f, .5f, true);
+            WeaponPanelRectTransform.DOAnchorPosX(250f, .5f, true);
             PauseRectTransform.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack).OnComplete(() =>
             {
                 _isAnimating = false;
