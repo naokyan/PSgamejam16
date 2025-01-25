@@ -1,0 +1,8 @@
+
+mcsharpsquid:S3903"%Move 'Player' into a named namespace.(¹Ç‹òøÿÿÿÿJ$2645b6b6-aeaf-4013-97c0-2f4053eb3a35
+Œcsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(ÏÊ…ÿÿÿÿÿJ$96c6d8fb-ada7-4d79-8641-d1f8800407cb
+‡csharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Øô¦±J$f0e8041d-996b-4649-b939-fd38e8bffe96
+Œcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(úáÑ³üÿÿÿÿJ$0dba289f-6b1d-4d5c-993b-0ed068dd6699
+‡csharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(üü‡J$447a44a4-c82b-424d-9c18-c3af053e14c0
+csharpsquid:S2223	"EChange the visibility of 'Instance' or make it 'const' or 'readonly'.(ÏÊ…ÿÿÿÿÿJ$b2fb3a7a-5b6a-436a-842c-6cb7c4b47a92
+˜csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ä“±ÏJ$cf149d64-7f65-430a-acfa-21f30fc7de66
