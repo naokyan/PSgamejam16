@@ -1,8 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -23,6 +22,7 @@ public class Player : MonoBehaviour
     [Header("HUD Elements")]
     [SerializeField] private Slider hpBar;
     [SerializeField] private Slider xpBar;
+    [SerializeField] private TextMeshProUGUI ammoCountText;
     [SerializeField] private Image weaponImage;
     private void Start()
     {
@@ -67,7 +67,6 @@ public class Player : MonoBehaviour
         
         //Update hp bar
         hpBar.value = currentHp;
-
     }
 
     public void GainXp(int amount)
@@ -100,6 +99,7 @@ public class Player : MonoBehaviour
         hpBar.maxValue = maxHp;
         hpBar.value = currentHp;
     }
-
     public void SetWeaponImage(Sprite icon) { weaponImage.sprite = icon; }
+
+    public void SetAmmoText(int currentAmount,int maxAmount) { ammoCountText.text = currentAmount + " / " + maxAmount; } 
 }

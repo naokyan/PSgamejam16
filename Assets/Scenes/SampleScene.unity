@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &177250477 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4836141250603855683, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+  m_PrefabInstance: {fileID: 2022119013}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &504993189
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78fa359b665271a458ebd4236ca87901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BarsParnelRectTransform: {fileID: 0}
-  WeaponImageRectTransform: {fileID: 0}
+  BarsParnelRectTransform: {fileID: 177250477}
+  WeaponPanelRectTransform: {fileID: 1497052763}
   PauseRectTransform: {fileID: 916148045}
   musicButton: {fileID: 916148047}
   soundButton: {fileID: 916148046}
@@ -215,9 +220,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 10
-  _currentHp: 0
+  currentHp: 0
   level: 1
-  xpToLvlUp: 10
   damage: 1
   hpBar: {fileID: 63186902}
   xpBar: {fileID: 1924659421}
@@ -578,6 +582,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1497052763 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3289272590121221606, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+  m_PrefabInstance: {fileID: 2022119013}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1924659421 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2247311909895561711, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
@@ -641,9 +650,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHUD
       objectReference: {fileID: 0}
+    - target: {fileID: 3289272590121221606, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289272590121221606, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547679082614460895, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 850
+      objectReference: {fileID: 0}
     - target: {fileID: 7840496973699779172, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510504260418668293, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+      propertyPath: m_text
+      value: 50 / 50
       objectReference: {fileID: 0}
     - target: {fileID: 8658796719536707337, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -652,6 +677,14 @@ PrefabInstance:
     - target: {fileID: 8658796719536707337, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751303717025853353, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751303717025853353, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
