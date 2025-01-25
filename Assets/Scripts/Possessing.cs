@@ -10,17 +10,28 @@ public class Possessing : MonoBehaviour
     {
         Vector2 mousePosition = InputManager.MousePosition;
 
-        foreach (var enemy in _enemiesInRange)
+        foreach (GameObject enemy in _enemiesInRange)
         {
             Collider2D enemyCollider = enemy.GetComponent<Collider2D>();
             if (enemyCollider != null && enemyCollider.OverlapPoint(mousePosition))
             {
                 ShowOutline(enemy, true);
+
+                if (InputManager.OnPossessPressed.WasPressedThisFrame() && GameManager.CanPossess)
+                {
+                    GameManager.PossessEnemy(enemy);
+                    return;
+                }
             }
             else
             {
                 ShowOutline(enemy, false);
             }
+        }
+
+        if (InputManager.OnPossessPressed.WasPressedThisFrame() && GameManager.IsPossessing)
+        {
+            GameManager.BackToOriginalForm();
         }
     }
 
