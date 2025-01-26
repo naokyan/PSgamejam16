@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +14,17 @@ public class GameManager : MonoBehaviour
     private static GameObject _originalPlayer;
     private static GameObject _currentPlayer;
 
+    [SerializeField] private Slider _playerHPBar;
+    [SerializeField] private Image _playerHPBarColor;
+
+    public static int _playerHP;
+
     private void Start()
     {
         CanPossess = true;
         IsPossessing = false;
         _originalPlayer = GameObject.FindGameObjectWithTag("Player");
+        _playerHP = 8;//player's default HP is set to 8
     }
 
 
@@ -24,6 +34,27 @@ public class GameManager : MonoBehaviour
         if (_originalPlayer != _currentPlayer)
         {
             _originalPlayer.transform.position = _currentPlayer.transform.position;
+        }
+
+        //change player's HP bar here
+        _playerHPBar.value = _playerHP / 8f;
+
+        if (_playerHP < 3)
+        {
+            _playerHPBarColor.color = Color.red;
+        }
+        else if (_playerHP > 5)
+        {
+            _playerHPBarColor.color = Color.green;
+        }
+        else
+        {
+            _playerHPBarColor.color = Color.yellow;
+        }
+
+        if (_playerHP == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -35,8 +66,7 @@ public class GameManager : MonoBehaviour
 
         enemy.GetComponent<PlayerMovement>().enabled = true;
         enemy.GetComponent<Shooting>().enabled = true;
-        enemy.GetComponentInChildren<GunController>().enabled = true;
-        enemy.GetComponentInChildren<Possessing>().enabled = true;
+        enemy.GetComponent<Possessing>().enabled = true;
 
         enemy.tag = "Player";
     }
@@ -47,5 +77,10 @@ public class GameManager : MonoBehaviour
 
         _currentPlayer.SetActive(false);
         _originalPlayer.SetActive(true);
+    }
+
+    public static void ChangePlayerHP(int hitpoints)
+    {
+        _playerHP = _playerHP + hitpoints;
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,11 +28,17 @@ public class PlayerMovement : MonoBehaviour
 
     private Camera _mainCamera;
 
-    private void Awake()
+    private SpriteRenderer _playerSprite;
+    private bool _isInvincible = false;
+    [SerializeField] private float _blinkDuration = 2f;//this determines how long player's sprite blinks when running into an enemy
+    [SerializeField] private float _blinkInterval = 0.2f;
+
+    private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _mainCamera = Camera.main;
+        _playerSprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -92,6 +99,39 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(_dashingCooldown);
         _canDash = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy") && !_isInvincible)
+        {
+            GameManager.ChangePlayerHP(-1);
+            StartCoroutine(BlinkAndInvincibility());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet") && !_isInvincible)
+        {
+            GameManager.ChangePlayerHP(-1);
+        }
+    }
+
+    private IEnumerator BlinkAndInvincibility()
+    {
+        _isInvincible = true;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < _blinkDuration)
+        {
+            _playerSprite.enabled = !_playerSprite.enabled; 
+            elapsedTime += _blinkInterval;
+            yield return new WaitForSeconds(_blinkInterval);
+        }
+
+        _playerSprite.enabled = true; 
+        _isInvincible = false;
     }
 }
 

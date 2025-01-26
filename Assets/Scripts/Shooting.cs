@@ -5,35 +5,54 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private float _shootingCooldown = 0.5f;
+
     [SerializeField] private SpriteRenderer _gun; 
-    [SerializeField] private Transform _bulletSpawnPoint; 
+    [SerializeField] private Transform _bulletSpawnPoint;
+
+    [SerializeField] private float _shootingCooldown = 0.5f;
+    [SerializeField, Min(1)] private int _bulletsToShootEachTime = 1;
+    [SerializeField] private float _bulletSpreadAngle = 30f;
 
     private Vector2 playerFacingDirection;
     private float _nextFireTime = 0f;
 
+    private EnemyController _enemyScript;
+    private Transform _player;
+
     private void Start()
     {
+        _player = GameObject.FindWithTag("Player").transform;
+
         if (_bulletSpawnPoint == null)
         {
             _bulletSpawnPoint = new GameObject("BulletSpawnPoint").transform;
             _bulletSpawnPoint.SetParent(transform);
         }
+
+        if (GetComponentInParent<EnemyController>())
+        {
+            _enemyScript = GetComponentInParent<EnemyController>();
+        }
     }
 
     private void Update()
     {
-        Vector2 mousePosition = InputManager.MousePosition;
-        Vector2 aimDirection = (mousePosition - _rb.position).normalized;
-
-        if (aimDirection != Vector2.zero)
+        //test if this is controlled by player or enemy
+        if (GetComponent<PlayerMovement>().enabled)
         {
-            playerFacingDirection = aimDirection;
+            if (InputManager.OnShootPressed.IsPressed() && Time.time >= _nextFireTime)
+            {
+                playerFacingDirection = InputManager.MousePosition;
+                Fire();
+            }
         }
-
-        if (InputManager.OnShootPressed.IsPressed() && Time.time >= _nextFireTime)
+        else
         {
-            Fire();
+            if (_enemyScript.PlayerInRange() && Time.time >= _nextFireTime)
+            {
+                playerFacingDirection = (Vector2)_player.position;
+                Fire();
+            }
         }
 
         if (_gun != null && _bulletSpawnPoint != null)
@@ -56,21 +75,33 @@ public class Shooting : MonoBehaviour
 
     private void Fire()
     {
-        GameObject bullet = ObjectPool.instance.GetPooledObject();
+        Vector2 baseAimDirection = (playerFacingDirection - _rb.position).normalized; 
 
-        if (bullet != null)
+        for (int i = 0; i < _bulletsToShootEachTime; i++)
         {
-            bullet.transform.position = _bulletSpawnPoint.position;
+            GameObject bullet = ObjectPool.instance.GetPooledObject();
 
-            Bullet bulletScript = bullet.GetComponent<Bullet>();
-            if (bulletScript != null)
+            if (bullet != null)
             {
-                bulletScript.Initialize(playerFacingDirection);
+                bullet.transform.position = _bulletSpawnPoint.position;
+
+                float angleOffset = (i - (_bulletsToShootEachTime - 1) / 2f) * _bulletSpreadAngle;
+                float angle = Mathf.Atan2(baseAimDirection.y, baseAimDirection.x) * Mathf.Rad2Deg + angleOffset;
+
+                Vector2 bulletDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+
+                bullet.transform.rotation = Quaternion.Euler(0, 0, angle - 90); 
+
+                Bullet bulletScript = bullet.GetComponent<Bullet>();
+                if (bulletScript != null)
+                {
+                    bulletScript.Initialize(bulletDirection); 
+                }
+
+                bullet.SetActive(true);
             }
-
-            bullet.SetActive(true);
-
-            _nextFireTime = Time.time + _shootingCooldown;
         }
+
+        _nextFireTime = Time.time + _shootingCooldown;
     }
 }
