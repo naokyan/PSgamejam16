@@ -3,11 +3,22 @@ using UnityEngine;
 
 public class Possessing : MonoBehaviour
 {
+    [SerializeField] private float _detectionRadius = 10f;
+    
+    private LayerMask _enemyLayer; 
+
     private List<GameObject> _enemiesInRange = new List<GameObject>();
     private Dictionary<GameObject, GameObject> _outlines = new Dictionary<GameObject, GameObject>();
 
+    private void Start()
+    {
+        _enemyLayer = LayerMask.GetMask("Enemy");
+    }
+
     private void Update()
     {
+        DetectEnemiesInRange();
+
         Vector2 mousePosition = InputManager.MousePosition;
 
         foreach (GameObject enemy in _enemiesInRange)
@@ -35,22 +46,35 @@ public class Possessing : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void DetectEnemiesInRange()
     {
-        if (other.CompareTag("Enemy") && !_enemiesInRange.Contains(other.gameObject))
-        {
-            _enemiesInRange.Add(other.gameObject);
-            CreateOutline(other.gameObject);
-        }
-    }
+        _enemiesInRange.Clear();
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy") && _enemiesInRange.Contains(other.gameObject))
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _detectionRadius, _enemyLayer);
+
+        foreach (Collider2D collider in hitColliders)
         {
-            ShowOutline(other.gameObject, false);
-            RemoveOutline(other.gameObject);
-            _enemiesInRange.Remove(other.gameObject);
+            if (collider.CompareTag("Enemy") && !_enemiesInRange.Contains(collider.gameObject))
+            {
+                _enemiesInRange.Add(collider.gameObject);
+                CreateOutline(collider.gameObject);
+            }
+        }
+
+        List<GameObject> enemiesToRemove = new List<GameObject>();
+        foreach (GameObject enemy in _enemiesInRange)
+        {
+            if (enemy == null || Vector2.Distance(transform.position, enemy.transform.position) > _detectionRadius)
+            {
+                enemiesToRemove.Add(enemy);
+            }
+        }
+
+        foreach (GameObject enemy in enemiesToRemove)
+        {
+            ShowOutline(enemy, false);
+            RemoveOutline(enemy);
+            _enemiesInRange.Remove(enemy);
         }
     }
 
@@ -91,5 +115,12 @@ public class Possessing : MonoBehaviour
             Destroy(_outlines[enemy]);
             _outlines.Remove(enemy);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
     }
 }
