@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro; // Add this to use TextMeshPro
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -8,16 +7,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _detectionRadius = 10f;
 
     private Rigidbody2D _rb;
-
     private LayerMask _playerLayer;
-
     private Collider2D _collided;
 
     [SerializeField] private float _moveSpeed = 3f;
-    [SerializeField] private float _wanderRadius = 3f; 
-    [SerializeField] private float _wanderInterval = 2f; 
-    private Vector2 _startingPosition; 
-    private Vector2 _wanderTarget; 
+    [SerializeField] private float _wanderRadius = 3f;
+    [SerializeField] private float _wanderInterval = 2f;
+    private Vector2 _startingPosition;
+    private Vector2 _wanderTarget;
     private float _wanderTimer;
 
     private Animator _animator;
@@ -31,6 +28,8 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 _direction;
 
+    private Transform _player;
+
     private void Start()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
@@ -42,6 +41,8 @@ public class EnemyController : MonoBehaviour
 
         _animator = GetComponent<Animator>();
 
+        _player = GameObject.FindWithTag("Player").transform;
+
         _startingPosition = transform.position;
         SetNewWanderTarget();
     }
@@ -50,6 +51,12 @@ public class EnemyController : MonoBehaviour
     {
         EnemyBehave();
         UpdateAnimation();
+
+        /*
+        if (GameManager.NewGame)
+        {
+            transform.position = _startingPosition;
+        }*/
     }
 
     public bool PlayerInRange()
@@ -73,8 +80,6 @@ public class EnemyController : MonoBehaviour
         {
             _direction = (_collided.transform.position - transform.position).normalized;
             _rb.velocity = _direction * _moveSpeed;
-
-            //UpdateAnimation(direction);
         }
         else
         {
@@ -87,8 +92,6 @@ public class EnemyController : MonoBehaviour
         _direction = (_wanderTarget - (Vector2)transform.position).normalized;
         _rb.velocity = _direction * _moveSpeed;
 
-        //UpdateAnimation(direction);
-
         if (Vector2.Distance(transform.position, _wanderTarget) < 0.1f)
         {
             SetNewWanderTarget();
@@ -97,7 +100,7 @@ public class EnemyController : MonoBehaviour
         _wanderTimer -= Time.deltaTime;
         if (_wanderTimer <= 0)
         {
-            SetNewWanderTarget(); 
+            SetNewWanderTarget();
         }
     }
 
@@ -114,12 +117,12 @@ public class EnemyController : MonoBehaviour
             _animator.SetFloat(_aimLastHorizontal, _direction.x);
             _animator.SetFloat(_aimLastVertical, _direction.y);
         }
-
     }
+
     private void SetNewWanderTarget()
     {
         _wanderTarget = _startingPosition + UnityEngine.Random.insideUnitCircle * _wanderRadius;
-        _wanderTimer = _wanderInterval; 
+        _wanderTimer = _wanderInterval;
     }
 
     private void OnDrawGizmosSelected()

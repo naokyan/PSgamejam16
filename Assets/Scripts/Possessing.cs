@@ -24,12 +24,13 @@ public class Possessing : MonoBehaviour
         foreach (GameObject enemy in _enemiesInRange)
         {
             Collider2D enemyCollider = enemy.GetComponent<Collider2D>();
-            if (enemyCollider != null && enemyCollider.OverlapPoint(mousePosition))
+            if (enemyCollider != null && enemyCollider.OverlapPoint(mousePosition) && enemy.GetComponent<EnemyHealthBar>().CanBePossessed)
             {
                 ShowOutline(enemy, true);
 
-                if (InputManager.OnPossessPressed.WasPressedThisFrame() && GameManager.CanPossess)
+                if (InputManager.OnPossessPressed.WasPressedThisFrame())
                 {
+                    ShowOutline(enemy, false);
                     GameManager.PossessEnemy(enemy);
                     return;
                 }
