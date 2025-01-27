@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -39,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _mainCamera = Camera.main;
         _playerSprite = GetComponent<SpriteRenderer>();
+
+        if (PlayerSpawnPoint.SpawnPoint != null && !GameManager.IsPossessing)
+        {
+            transform.position = PlayerSpawnPoint.SpawnPoint;
+        }
     }
 
     private void Update()
@@ -112,6 +119,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!this.enabled)
+        {
+            return;
+        }
+
         if (other.CompareTag("Bullet") && !_isInvincible)
         {
             GameManager.ChangePlayerHP(-1);
