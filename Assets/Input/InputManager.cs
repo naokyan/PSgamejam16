@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public static InputAction OnShootPressed;
     public static InputAction OnDashPressed;
     public static InputAction OnPossessPressed;
+    public static InputAction OnPausePressed;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class InputManager : MonoBehaviour
         OnDashPressed = _playerInput.actions["Dash"];
         OnShootPressed = _playerInput.actions["Shoot"];
         OnPossessPressed = _playerInput.actions["Possess"];
+        OnPausePressed = _playerInput.actions["Pause"];
     }
 
     private void Update()
