@@ -16,9 +16,12 @@ public class GameOver : MonoBehaviour
 
     private void Update()
     {
-        if (Player.Instance.IsDead())
+        if (Player.Instance)
         {
-            GameOverPanel.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack);
+            if (Player.Instance.IsDead())
+            {
+                GameOverPanel.DOScale(Vector3.one, .5f).SetEase(Ease.OutBack);
+            }
         }
     }
 
