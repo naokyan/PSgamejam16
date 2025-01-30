@@ -19,6 +19,8 @@ public class Shooting : MonoBehaviour
     private EnemyController _enemyScript;
     private Transform _player;
 
+    private bool _isControlledByPlayer;
+
     private void Start()
     {
         _player = GameObject.FindWithTag("Player").transform;
@@ -40,6 +42,7 @@ public class Shooting : MonoBehaviour
         //test if this is controlled by player or enemy
         if (GetComponent<PlayerMovement>().enabled)
         {
+            _isControlledByPlayer = true;
             if (InputManager.OnShootPressed.IsPressed() && Time.time >= _nextFireTime)
             {
                 playerFacingDirection = InputManager.MousePosition;
@@ -48,6 +51,7 @@ public class Shooting : MonoBehaviour
         }
         else
         {
+            _isControlledByPlayer = false;
             if (_enemyScript.PlayerInRange() && Time.time >= _nextFireTime)
             {
                 playerFacingDirection = (Vector2)_player.position;
@@ -97,6 +101,8 @@ public class Shooting : MonoBehaviour
                 {
                     bulletScript.Initialize(bulletDirection); 
                 }
+
+                bullet.tag = _isControlledByPlayer ? "PlayerBullet" : "EnemyBullet";
 
                 bullet.SetActive(true);
             }

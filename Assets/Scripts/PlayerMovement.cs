@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Bullet") && !_isInvincible)
+        if (other.CompareTag("EnemyBullet") && !_isInvincible)
         {
             GameManager.ChangePlayerHP(-1);
         }

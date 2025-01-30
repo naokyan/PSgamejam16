@@ -19,5 +19,7 @@ public class PlayerSpawnPoint : MonoBehaviour
         {
             Destroy(gameObject); // Ensure there's only one instance
         }
+
+        SpawnPoint = GameObject.FindWithTag("Player").transform.position;
     }
 }
