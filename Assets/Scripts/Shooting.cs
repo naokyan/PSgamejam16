@@ -52,7 +52,7 @@ public class Shooting : MonoBehaviour
         else
         {
             _isControlledByPlayer = false;
-            if (_enemyScript.PlayerInRange() && Time.time >= _nextFireTime)
+            if (_enemyScript != null && _enemyScript.PlayerInRange() && Time.time >= _nextFireTime)
             {
                 playerFacingDirection = (Vector2)_player.position;
                 Fire();
