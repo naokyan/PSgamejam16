@@ -1,14 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Specialized;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool CanPossess;
     public static bool IsPossessing;
 
     private static GameObject _originalPlayer;
@@ -16,17 +13,27 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Slider _playerHPBar;
     [SerializeField] private Image _playerHPBarColor;
+    [SerializeField] private GameObject _deathScreen;
 
+    private float _playerMaxHP;
     public static int _playerHP;
+
+    public static bool NewGame;
 
     private void Start()
     {
-        CanPossess = true;
         IsPossessing = false;
         _originalPlayer = GameObject.FindGameObjectWithTag("Player");
-        _playerHP = 8;//player's default HP is set to 8
-    }
 
+        _playerMaxHP = 8f; // Player's default HP is set to 8
+        _playerHP = (int)_playerMaxHP;
+
+        _deathScreen.SetActive(false);
+
+        NewGame = false;
+
+
+    }
 
     private void Update()
     {
@@ -36,8 +43,7 @@ public class GameManager : MonoBehaviour
             _originalPlayer.transform.position = _currentPlayer.transform.position;
         }
 
-        //change player's HP bar here
-        _playerHPBar.value = _playerHP / 8f;
+        _playerHPBar.value = _playerHP / _playerMaxHP;
 
         if (_playerHP < 3)
         {
@@ -52,10 +58,34 @@ public class GameManager : MonoBehaviour
             _playerHPBarColor.color = Color.yellow;
         }
 
-        if (_playerHP == 0)
+        if (_playerHP <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(HandlePlayerDeath());
         }
+    }
+
+    private IEnumerator HandlePlayerDeath()
+    {
+        /*
+        _deathScreen.SetActive(true);
+        NewGame = true;
+
+        _originalPlayer.transform.position = SpawnPoint;
+        if (_currentPlayer != _originalPlayer)
+        {
+            _currentPlayer.SetActive(false);
+            _originalPlayer.SetActive(true);
+            _currentPlayer = _originalPlayer;
+        }
+        _playerHP = (int)_playerMaxHP;
+
+        yield return new WaitForSeconds(2);
+        NewGame = false;
+        _deathScreen.SetActive(false);*/
+
+        _deathScreen.SetActive(true);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static void PossessEnemy(GameObject enemy)
@@ -68,7 +98,13 @@ public class GameManager : MonoBehaviour
         enemy.GetComponent<Shooting>().enabled = true;
         enemy.GetComponent<Possessing>().enabled = true;
 
+        enemy.GetComponent<EnemyController>().enabled = false;
+
+        enemy.GetComponent<EnemyHealthBar>()._canvasObject.SetActive(false);
+        enemy.GetComponent<EnemyHealthBar>().enabled = false;
+
         enemy.tag = "Player";
+        enemy.layer = LayerMask.NameToLayer("Player");
     }
 
     public static void BackToOriginalForm()
