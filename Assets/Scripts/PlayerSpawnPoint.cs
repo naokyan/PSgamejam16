@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerSpawnPoint : MonoBehaviour
 {
-    public static PlayerSpawnPoint Instance; 
+    public static PlayerSpawnPoint Instance;
 
     public static Vector3 SpawnPoint;
     public static bool GameFirstStart;
