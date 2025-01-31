@@ -3151,8 +3151,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3167,7 +3167,7 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 37668
       atime1: 64957
       atime2: 0
       atime3: 0
@@ -3248,7 +3248,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.5}
+    oldSize: {x: 7.5, y: 7.5}
     newSize: {x: 1, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3360,7 +3360,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1994144632, guid: 0cf18f5ba0cef004081cd3a9041e7325, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b47abd147f923b5439080ec36d681293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3381,7 +3381,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.61, y: -3.73, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1354209572}
@@ -4592,6 +4592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _offset: {x: 0, y: 1.5, z: 0}
   _canvasObject: {fileID: 1316834769}
+  _currentHealth: 8
   CanBePossessed: 0
 --- !u!114 &342346938
 MonoBehaviour:
@@ -16400,6 +16401,7 @@ MonoBehaviour:
   _playerHPBar: {fileID: 432744676}
   _playerHPBarColor: {fileID: 680242497}
   _deathScreen: {fileID: 1140366755}
+  pauseMenuUI: {fileID: 0}
 --- !u!4 &1263557397
 Transform:
   m_ObjectHideFlags: 0
