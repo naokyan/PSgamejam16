@@ -416,6 +416,8 @@ MonoBehaviour:
   _dashingTime: 0.2
   _dashingCooldown: 1
   _tr: {fileID: 316729818}
+  _blinkDuration: 2
+  _blinkInterval: 0.2
 --- !u!95 &316729817
 Animator:
   serializedVersion: 5
@@ -607,7 +609,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4093c901f61cc43bd01e0eb2026b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPosition: {fileID: 551433193}
+  _rb: {fileID: 0}
+  _gun: {fileID: 0}
+  _bulletSpawnPoint: {fileID: 0}
+  _shootingCooldown: 0.5
+  _bulletsToShootEachTime: 1
+  _bulletSpreadAngle: 30
 --- !u!1 &551433192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef8f4a39ec40044aa3cbb7ce446d779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 316729814}
+  _smoothTime: 0.05
+  _cameraBounds: {x: 5, y: 3}
 --- !u!1 &1929150070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1372,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4093c901f61cc43bd01e0eb2026b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPosition: {fileID: 2093320234}
+  _rb: {fileID: 0}
+  _gun: {fileID: 0}
+  _bulletSpawnPoint: {fileID: 0}
+  _shootingCooldown: 0.5
+  _bulletsToShootEachTime: 1
+  _bulletSpreadAngle: 30
 --- !u!114 &1929150072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,6 +1395,8 @@ MonoBehaviour:
   _dashingTime: 0.2
   _dashingCooldown: 1
   _tr: {fileID: 1929150073}
+  _blinkDuration: 2
+  _blinkInterval: 0.2
 --- !u!96 &1929150073
 TrailRenderer:
   serializedVersion: 3

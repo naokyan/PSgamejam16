@@ -48,12 +48,6 @@ public class Player : MonoBehaviour
         
         //Update hp bar
         hpBar.value = currentHp;
-        
-        //Check if the player health is below or equal to 0
-        if (currentHp <= 0)
-        {
-            //Die
-        }
     }
 
     public void Heal(int amount)
@@ -98,8 +92,15 @@ public class Player : MonoBehaviour
         currentHp += 5;
         hpBar.maxValue = maxHp;
         hpBar.value = currentHp;
+        
+        damage++;
     }
     public void SetWeaponImage(Sprite icon) { weaponImage.sprite = icon; }
 
-    public void SetAmmoText(int currentAmount,int maxAmount) { ammoCountText.text = currentAmount + " / " + maxAmount; } 
+    public void SetAmmoText(int currentAmount,int maxAmount) { ammoCountText.text = currentAmount + " / " + maxAmount; }
+
+    public bool IsDead()
+    {
+        return currentHp <= 0;
+    }
 }
