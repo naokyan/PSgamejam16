@@ -109,6 +109,8 @@ public class GameManager : MonoBehaviour
 
         _deathScreen.SetActive(true);
         yield return new WaitForSeconds(2);
+
+        PlayerSpawnPoint.GameFirstStart = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
