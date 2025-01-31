@@ -52,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_isDashing) return;
 
+        // --------------------------------
+        // 1) Movement logic (unchanged)
+        // --------------------------------
         _movement.Set(InputManager.Movement.x, InputManager.Movement.y);
 
         _animator.SetFloat(_moveHorizontal, _movement.x);
@@ -59,20 +62,48 @@ public class PlayerMovement : MonoBehaviour
 
         _rb.velocity = _movement * _moveSpeed;
 
+        // --------------------------------
+        // 2) Calculate aim direction from mouse
+        // --------------------------------
         Vector2 mousePosition = InputManager.MousePosition;
         Vector2 aimDirection = (mousePosition - _rb.position).normalized;
 
-        _animator.SetFloat(_aimHorizontal, aimDirection.x);
-        _animator.SetFloat(_aimVertical, aimDirection.y);
+        // *** NEW: We'll store a separate float for Animator to always see positive (abs) X. 
+        float aimXForAnimation = Mathf.Abs(aimDirection.x);
+        float aimYForAnimation = aimDirection.y;
 
-        
+        // --------------------------------
+        // 3) Send aim data to Animator
+        // --------------------------------
+        // If you only have right-side animations, pass abs() for X.
+        // So the animator won't look for negative X animations.
+        _animator.SetFloat(_aimHorizontal, aimXForAnimation);  // *** NEW ***
+        _animator.SetFloat(_aimVertical, aimYForAnimation);    // same as original
+
+        // Record "last" aim direction (if aiming somewhere)
         if (aimDirection != Vector2.zero)
         {
             _animator.SetFloat(_aimLastHorizontal, aimDirection.x);
             _animator.SetFloat(_aimLastVertical, aimDirection.y);
         }
 
-        _canDash = false;//players can only dash if there is movement inputs
+        // --------------------------------
+        // 4) Flip sprite if aiming left    // *** NEW ***
+        // --------------------------------
+        if (aimDirection.x < 0f)
+        {
+            _playerSprite.flipX = true;
+        }
+        else if (aimDirection.x > 0f)
+        {
+            _playerSprite.flipX = false;
+        }
+        // If aimDirection.x == 0, do nothing (leave the last flip state)
+
+        // --------------------------------
+        // 5) Dash logic (unchanged)
+        // --------------------------------
+        _canDash = false; // players can only dash if there is movement input
         if (_movement != Vector2.zero)
         {
             _canDash = true;
@@ -83,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
+
 
     private IEnumerator Dash()
     {
