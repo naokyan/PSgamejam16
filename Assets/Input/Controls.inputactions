@@ -58,15 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "HideConfigurations",
-                    "type": "Button",
-                    "id": "77016c81-3815-4879-b83f-6007e9c91687",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -232,17 +223,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f0975082-7d0e-4201-99c7-682e54531223",
-                    "path": "c",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HideConfigurations",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
