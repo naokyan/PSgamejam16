@@ -15,6 +15,8 @@ public class EnemyHealthBar : MonoBehaviour
 
     public bool CanBePossessed;
 
+    [SerializeField] private int _possessUnderHP;
+
     private void Start()
     {
         CreateHealthBar();
@@ -81,7 +83,7 @@ public class EnemyHealthBar : MonoBehaviour
 
     private void Update()
     {
-        if (_currentHealth < 4)
+        if (_currentHealth < _possessUnderHP)
         {
             CanBePossessed = true;
         }

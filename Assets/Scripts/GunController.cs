@@ -13,6 +13,8 @@ public class GunController : MonoBehaviour
     private SpriteRenderer _currentSpriteRenderer;
     private SpriteRenderer _gunSpriteRenderer;
 
+    [SerializeField] private float gunSize = 3f; 
+
     private void Start()
     {
         _rb = GetComponentInParent<Rigidbody2D>();
@@ -22,8 +24,9 @@ public class GunController : MonoBehaviour
         _leftHand = transform.parent.Find("Left Hand");
 
         _currentSpriteRenderer = GetComponentInParent<SpriteRenderer>();
-
         _gunSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        ApplyGunSize(); 
     }
 
     private void Update()
@@ -36,7 +39,6 @@ public class GunController : MonoBehaviour
         {
             EnemyInControl();
         }
-        
     }
 
     private void PlayerInControl()
@@ -44,67 +46,48 @@ public class GunController : MonoBehaviour
         Vector2 mousePosition = InputManager.MousePosition;
         Vector2 aimDirection = (mousePosition - _rb.position).normalized;
 
-        if (mousePosition.x > _player.position.x)
-        {
-            _currentHand = _rightHand;
-        }
-        else
-        {
-            _currentHand = _leftHand;
-        }
-
+        _currentHand = (mousePosition.x > _player.position.x) ? _rightHand : _leftHand;
         transform.position = _currentHand.position;
 
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        Vector3 localScale = transform.localScale;
-        localScale.x = (_currentHand == _leftHand) ? -1 : 1;
-        transform.localScale = localScale;
+        _gunSpriteRenderer.flipX = (_currentHand == _leftHand);
 
-        if (mousePosition.y > _player.position.y)
-        {
-            _gunSpriteRenderer.sortingOrder = _currentSpriteRenderer.sortingOrder - 1;
-        }
-        else
-        {
-            _gunSpriteRenderer.sortingOrder = _currentSpriteRenderer.sortingOrder + 1;
-        }
+        _gunSpriteRenderer.sortingOrder = (mousePosition.y > _player.position.y) ?
+            _currentSpriteRenderer.sortingOrder - 1 :
+            _currentSpriteRenderer.sortingOrder + 1;
     }
 
     private void EnemyInControl()
     {
         Vector2 aimDirection = _rb.velocity.normalized;
-
         if (aimDirection == Vector2.zero)
         {
             aimDirection = ((Vector2)_player.position - _rb.position).normalized;
         }
 
-        if (aimDirection.x > 0) 
-        {
-            _currentHand = _rightHand;
-        }
-        else
-        {
-            _currentHand = _leftHand;
-        }
-
+        _currentHand = (aimDirection.x > 0) ? _rightHand : _leftHand;
         transform.position = _currentHand.position;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90;
+
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        Vector3 localScale = transform.localScale;
-        localScale.x = (_currentHand == _leftHand) ? -1 : 1;
-        transform.localScale = localScale;
+        _gunSpriteRenderer.flipX = (_currentHand == _leftHand);
 
-        if (_player.position.y > transform.position.y)
-        {
-            _gunSpriteRenderer.sortingOrder = _currentSpriteRenderer.sortingOrder - 1;
-        }
-        else
-        {
-            _gunSpriteRenderer.sortingOrder = _currentSpriteRenderer.sortingOrder + 1;
-        }
+        _gunSpriteRenderer.sortingOrder = (_player.position.y > transform.position.y) ?
+            _currentSpriteRenderer.sortingOrder - 1 :
+            _currentSpriteRenderer.sortingOrder + 1;
+    }
+
+    private void ApplyGunSize()
+    {
+        transform.localScale = Vector3.one * gunSize;
+    }
+
+    public void SetGunSize(float newSize)
+    {
+        gunSize = newSize;
+        ApplyGunSize();
     }
 }

@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 6d1aac48e662ca340a629278dc77b04b
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/MechanicsTest.unity
-    guid: f885e75c8b62e4b44890922f7b113a92
+    path: Assets/Scenes/LevelDesign(Amelia).unity
+    guid: 28e2f6af8b525014a931e4dcccf03ac0
   m_configObjects: {}

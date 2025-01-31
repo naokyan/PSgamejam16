@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject pauseMenuUI;
 
+    [SerializeField] private InputActionAsset _inputSystemToggler;
+
     private void Start()
     {
         IsPossessing = false;
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
         //NewGame = false;
 
         _isPaused = false;
+
+        _inputSystemToggler.Enable();
     }
 
     private void Update()
@@ -108,7 +113,9 @@ public class GameManager : MonoBehaviour
         _deathScreen.SetActive(false);*/
 
         _deathScreen.SetActive(true);
+        _inputSystemToggler.Disable();
         yield return new WaitForSeconds(2);
+
 
         PlayerSpawnPoint.GameFirstStart = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
