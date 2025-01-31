@@ -175,22 +175,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHUD
       objectReference: {fileID: 0}
-    - target: {fileID: 2825714811089190291, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3923806311557152733, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840496973699779172, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8242379764668673124, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8658796719536707337, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -200,8 +184,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 1581031166768701845, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
@@ -349,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6c5ef3c78b1ae4ba8ebb3ad239a5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunSize: 3
 --- !u!4 &467415865
 Transform:
   m_ObjectHideFlags: 0
@@ -1477,6 +1461,8 @@ MonoBehaviour:
   _shootingCooldown: 0.5
   _bulletsToShootEachTime: 1
   _bulletSpreadAngle: 30
+  _muzzleXOffset: 0
+  _muzzleYOffset: 0
 --- !u!114 &1482260176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,6 +1787,7 @@ MonoBehaviour:
   _canvasObject: {fileID: 0}
   _currentHealth: 8
   CanBePossessed: 0
+  _possessUnderHP: 0
 --- !u!114 &1576161144 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3956615279106823337, guid: 4a3300e4e50fedd43826f3462e39c90d, type: 3}
@@ -1854,6 +1841,7 @@ MonoBehaviour:
   _canvasObject: {fileID: 0}
   _currentHealth: 8
   CanBePossessed: 0
+  _possessUnderHP: 0
 --- !u!114 &1576432942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,6 +1876,8 @@ MonoBehaviour:
   _shootingCooldown: 0.5
   _bulletsToShootEachTime: 1
   _bulletSpreadAngle: 30
+  _muzzleXOffset: 0
+  _muzzleYOffset: 0
 --- !u!114 &1576432944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,6 +2268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6c5ef3c78b1ae4ba8ebb3ad239a5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunSize: 3
 --- !u!4 &1688504198
 Transform:
   m_ObjectHideFlags: 0

@@ -109,13 +109,26 @@ public class EnemyController : MonoBehaviour
         _animator.SetFloat(_moveHorizontal, _direction.x);
         _animator.SetFloat(_moveVertical, _direction.y);
 
-        _animator.SetFloat(_aimHorizontal, _direction.x);
-        _animator.SetFloat(_aimVertical, _direction.y);
+        float aimXForAnimation = Mathf.Abs(_direction.x);
+        float aimYForAnimation = _direction.y;
+
+        _animator.SetFloat(_aimHorizontal, aimXForAnimation);
+        _animator.SetFloat(_aimVertical, aimYForAnimation);
 
         if (_direction != Vector2.zero)
         {
             _animator.SetFloat(_aimLastHorizontal, _direction.x);
             _animator.SetFloat(_aimLastVertical, _direction.y);
+        }
+
+        if (_direction.x < 0f)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (_direction.x > 0f)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+
         }
     }
 

@@ -21,6 +21,10 @@ public class Shooting : MonoBehaviour
 
     private bool _isControlledByPlayer;
 
+    [SerializeField] private float _muzzleXOffset;
+    [SerializeField] private float _muzzleYOffset;
+
+    private bool _hasBulletSpawn;
     private void Start()
     {
         _player = GameObject.FindWithTag("Player").transform;
@@ -29,6 +33,10 @@ public class Shooting : MonoBehaviour
         {
             _bulletSpawnPoint = new GameObject("BulletSpawnPoint").transform;
             _bulletSpawnPoint.SetParent(transform);
+        }
+        else
+        {
+            _hasBulletSpawn = true;
         }
 
         if (GetComponentInParent<EnemyController>())
@@ -69,11 +77,14 @@ public class Shooting : MonoBehaviour
     {
         if (_gun != null)
         {
-            Vector3 localTopOffset = new Vector3(0, _gun.bounds.extents.y, 0);
+            Vector3 gunDirection = _gun.transform.right; 
 
-            Vector3 worldTopPosition = _gun.transform.TransformPoint(localTopOffset);
+            Vector3 muzzlePosition = _gun.transform.position + gunDirection * _muzzleXOffset + _gun.transform.up * _muzzleYOffset;
 
-            _bulletSpawnPoint.position = worldTopPosition;
+            if (!_hasBulletSpawn)
+            {
+                _bulletSpawnPoint.position = muzzlePosition;
+            }
         }
     }
 
