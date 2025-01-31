@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class PlayerSpawnPoint : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerSpawnPoint : MonoBehaviour
     public static PlayerSpawnPoint Instance; 
 
     public static Vector3 SpawnPoint;
+    public static bool GameFirstStart;
 
     private void Awake()
     {
@@ -20,6 +22,9 @@ public class PlayerSpawnPoint : MonoBehaviour
             Destroy(gameObject); // Ensure there's only one instance
         }
 
-        SpawnPoint = GameObject.FindWithTag("Player").transform.position;
+        if (!GameFirstStart)
+        {
+            SpawnPoint = GameObject.FindWithTag("Player").transform.position;
+        }
     }
 }
