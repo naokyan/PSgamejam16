@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Specialized;
+using System.Diagnostics;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,7 +19,11 @@ public class GameManager : MonoBehaviour
     private float _playerMaxHP;
     public static int _playerHP;
 
-    public static bool NewGame;
+    //public static bool NewGame;
+
+    private bool _isPaused;
+
+    [SerializeField] private GameObject pauseMenuUI;
 
     private void Start()
     {
@@ -30,9 +35,9 @@ public class GameManager : MonoBehaviour
 
         _deathScreen.SetActive(false);
 
-        NewGame = false;
+        //NewGame = false;
 
-
+        _isPaused = false;
     }
 
     private void Update()
@@ -62,6 +67,25 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(HandlePlayerDeath());
         }
+
+        if (InputManager.OnPausePressed.WasPressedThisFrame())
+        {
+            TogglePause();
+        }
+    }
+
+    public void TogglePause()
+    {
+        _isPaused = !_isPaused;
+        pauseMenuUI.SetActive(_isPaused);
+        _currentPlayer.GetComponent<PlayerMovement>().enabled = !_isPaused;
+
+        Time.timeScale = _isPaused ? 0 : 1;
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 
     private IEnumerator HandlePlayerDeath()

@@ -11,7 +11,7 @@ public class EnemyHealthBar : MonoBehaviour
     public GameObject _canvasObject;
 
     private float _maxHealth = 8f;
-    private int _currentHealth = 8;
+    public int _currentHealth = 8;
 
     public bool CanBePossessed;
 
@@ -107,7 +107,7 @@ public class EnemyHealthBar : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("PlayerBullet"))
         {
             _currentHealth--;
             UpdateHealth(_currentHealth);
