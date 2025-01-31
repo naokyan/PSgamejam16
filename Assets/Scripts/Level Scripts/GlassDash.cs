@@ -10,6 +10,8 @@ public class StairsDash : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite[] damageSprites;
 
+    public GameObject brokenWindow;
+
     private void Start()
     {
         if (spriteRenderer == null)
@@ -29,6 +31,11 @@ public class StairsDash : MonoBehaviour
             }
             else if (currentDashHits >= dashHitsToBreak)
             {
+                if (brokenWindow!= null)
+                {
+                    Instantiate(brokenWindow, transform.position, transform.rotation);
+                }
+
                 Destroy(gameObject);
             }
         }
