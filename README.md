@@ -50,5 +50,4 @@ Each enemy is both a threat and an opportunity. Outwit the guards, manipulate yo
 
 ## 👨‍💻 Author
 
-Made by   
-For inquiries or feedback, feel free to reach out.
+Made by Team Blue Lemons
