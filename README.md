@@ -9,7 +9,7 @@
 
 ## 🖼️ Gameplay Preview
 
-👉 [**Check Gameplay Video Here**]()  
+👉 [**Check Gameplay Video Here**](https://youtu.be/jFVctBTvYHk)  
 
 ---
 
