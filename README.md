@@ -7,6 +7,18 @@
 
 ---
 
+## 🖼️ Gameplay Preview
+
+👉 [**Check Gameplay Video Here**]()  
+
+---
+
+## 🔗 Play the Game
+
+👉 [**Play Morphoid Here**](https://naokyan.itch.io/morphoid)  
+
+---
+
 ## 🌌 Story
 
 You are an alien — powerful, intelligent, and imprisoned in a human laboratory.
@@ -27,18 +39,6 @@ Each enemy is both a threat and an opportunity. Outwit the guards, manipulate yo
 | Shoot (while possessing) | `Left Click`        |
 
 > ⚠️ **Tip:** You must weaken enemies before you can take control of them. Dash is also your only way to shatter certain barriers.
-
----
-
-## 🖼️ Gameplay Preview
-
-👉 [**Check Gameplay Video Here**]()  
-
----
-
-## 🔗 Play the Game
-
-👉 [**Play Morphoid Here**](https://naokyan.itch.io/morphoid)  
 
 ---
 
