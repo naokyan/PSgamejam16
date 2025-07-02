@@ -5,8 +5,6 @@
 
 **Morphoid** is a top-down action shooting game where a mysterious creature of unknown origin escapes a heavily guarded laboratory by possessing its enemies — and unleashing their own powers against them.
 
-![Tutorial Poster](Assets/Sprites/Environmental%20assets/Tutorial%20poster.png)
-
 ---
 
 ## 🌌 Story
@@ -20,7 +18,6 @@ Each enemy is both a threat and an opportunity. Outwit the guards, manipulate yo
 ---
 
 ## 🎮 Controls
-![Tutorial Poster](Assets/Sprites/Environmental%20assets/Tutorial%20poster.png)
 
 | Action               | Key/Button               |
 |----------------------|--------------------------|
