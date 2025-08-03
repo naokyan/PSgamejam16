@@ -1,0 +1,507 @@
+[33mcommit 9e032bc6b1c6582928839050e8ad3e6cca6bb08d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 21:40:09 2025 -0700
+
+    Update README.md
+
+[33mcommit 0e49cb494a860a1f52b2c0d75cf202d98b213ef3[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 21:36:23 2025 -0700
+
+    Bug fixes
+
+[33mcommit 12836a7bdfb6c991f53130d954a0cfeb28f2e2dc[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 19:50:29 2025 -0700
+
+    Update README.md
+
+[33mcommit e03b67afbc7988de8b2596e977234ca339a40158[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 19:47:16 2025 -0700
+
+    Update README.md
+
+[33mcommit 6a39fb2e1394b9a70159ed182f36ff324315df59[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 19:46:15 2025 -0700
+
+    Update README.md
+
+[33mcommit e03a3c492a8d569a16e7f86b09ef6ec912801c94[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 19:45:05 2025 -0700
+
+    Update README.md
+
+[33mcommit bafa7f5d299b25c60bd6f7733986983e95e04f47[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 17:30:19 2025 -0700
+
+    bug fixes
+
+[33mcommit ffbb3fb443312e29191945408618f4b1e3988c2d[m
+Merge: e9aebf1 1710708
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 16:25:39 2025 -0700
+
+    Merge branch 'main' of https://github.com/naokyan/PSgamejam16
+
+[33mcommit e9aebf1516cf58b422065154053c144d60232b77[m[33m ([m[1;31morigin/Julien's-New-Branch[m[33m, [m[1;32mJulien's-New-Branch[m[33m)[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 00:39:53 2025 -0700
+
+    Merge branch 'Naokyan_Branch' into Julien's-New-Branch
+
+[33mcommit bbfbdc94817efbc29a8f4bae6cabebf27a93365e[m
+Merge: 8ac05be b5a3f83
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Tue Jul 1 00:29:40 2025 -0700
+
+    On Naokyan_Branch: !!GitHub_Desktop<Naokyan_Branch>
+
+[33mcommit fd7c7333678848142ab3d92079f19f2540ff7117[m[33m ([m[1;35mrefs/stash[m[33m)[m
+Merge: beb3c2c bc48ef5
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 00:29:40 2025 -0700
+
+    On Naokyan_Branch: !!GitHub_Desktop<Naokyan_Branch>
+
+[33mcommit b5a3f83479fcd51312db590ed66fb4d2bfd3f767[m
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Tue Jul 1 00:29:40 2025 -0700
+
+    index on Naokyan_Branch: 8ac05be Merge branch 'Naokyan_Branch' of https://github.com/naokyan/PSgamejam16 into Naokyan_Branch
+
+[33mcommit bc48ef555331aa934f69c23db1d609dc9e8940d2[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Tue Jul 1 00:29:40 2025 -0700
+
+    index on Naokyan_Branch: 8ac05be Merge branch 'Naokyan_Branch' of https://github.com/naokyan/PSgamejam16 into Naokyan_Branch
+
+[33mcommit 1710708c4139b377ab73f7bf52a9b064775e3103[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Mon Jun 30 22:27:42 2025 -0700
+
+    Update README.md
+
+[33mcommit 60748163476faca2c13cd97a2f3aeb7e4ea6948f[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Fri Jan 31 04:59:04 2025 -0800
+
+    Final Version Uploaded
+
+[33mcommit 0b6631fa432dcee1111b124b1f3b867ed8f838f8[m
+Merge: a0c0bf2 84d1d8e
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 20:30:13 2025 -0800
+
+    Merge branch 'Julien's-New-Branch' of https://github.com/naokyan/PSgamejam16 into Julien's-New-Branch
+
+[33mcommit a0c0bf299fb609ccb7b7cae98346c95ebcfe881c[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 20:30:00 2025 -0800
+
+    debugging animations
+
+[33mcommit 84d1d8ef238e44cf022a3c5c45f40e99bc58b655[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 23:29:36 2025 -0500
+
+    some updates on the graphics
+
+[33mcommit 6824d9da6d7bd033a3e263e262f97a1975caa8f0[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 19:27:35 2025 -0800
+
+    test
+
+[33mcommit 723cd65f1c42e4926b257d46b2e95f090168d7bd[m
+Merge: 9afb1d6 62c42d2
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 22:02:35 2025 -0500
+
+    Merge remote-tracking branch 'origin/Naokyan_Branch' into Julien's-New-Branch
+
+[33mcommit beb3c2c591acaa88dd47ef3d76c2ac12f1715728[m[33m ([m[1;31morigin/Naokyan_Branch[m[33m, [m[1;32mNaokyan_Branch[m[33m)[m
+Merge: 93f7ad1 7eb2f17
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 19:00:18 2025 -0800
+
+    Merge branch 'Naokyan_Branch' of https://github.com/naokyan/PSgamejam16 into Naokyan_Branch
+
+[33mcommit 8ac05be4f337d4fea2524c571f87a4d11db7f8b0[m
+Merge: 37644da ce2b23b
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 19:00:18 2025 -0800
+
+    Merge branch 'Naokyan_Branch' of https://github.com/naokyan/PSgamejam16 into Naokyan_Branch
+
+[33mcommit 93f7ad1dce53f47221f0bc05e7ea4af1439f3560[m
+Merge: 02997bf 9afb1d6
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 18:59:58 2025 -0800
+
+    Merge branch 'Julien's-New-Branch' into Naokyan_Branch
+
+[33mcommit 37644da5d82bf6c258abd075e92ebf29d60bdc1f[m
+Merge: 44baeb3 ff7ea26
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 18:59:58 2025 -0800
+
+    Merge branch 'Julien's-New-Branch' into Naokyan_Branch
+
+[33mcommit 7eb2f172fe038a513311bea7eb5298625897214c[m
+Merge: 02997bf f0b03ad
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 18:56:04 2025 -0800
+
+    Merge branch 'Naokyan_Branch' of https://github.com/naokyan/PSgamejam16 into Naokyan_Branch
+
+[33mcommit ce2b23bb9cca4046f0536625495a10530d7024db[m
+Merge: 44baeb3 0668bfd
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 18:56:04 2025 -0800
+
+    Merge branch 'Naokyan_Branch' of https://github.com/naokyan/PSgamejam16 into Naokyan_Branch
+
+[33mcommit 02997bfa202ea6b171e79c6c4e64eb912e583791[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 18:56:02 2025 -0800
+
+    delete scene to complete pull request
+
+[33mcommit 44baeb3b56d44c5d50adf8570474327c5dc45ebe[m
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 18:56:02 2025 -0800
+
+    delete scene to complete pull request
+
+[33mcommit f0b03addef521623d30c2205dd42bc6ac5bcdb4d[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 18:50:55 2025 -0800
+
+    Revert "delete scene to complete pull request"
+    
+    This reverts commit 3a7f8f3702e41e359e87b8ce9379caf8ad338456, reversing
+    changes made to 8c82c3ca38a480a17d2c285c31a78098aeb88aa7.
+
+[33mcommit 0668bfdd1f68068d530f394b1005156f2f542184[m
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 18:50:55 2025 -0800
+
+    Revert "delete scene to complete pull request"
+    
+    This reverts commit 3a7f8f3702e41e359e87b8ce9379caf8ad338456, reversing
+    changes made to 8c82c3ca38a480a17d2c285c31a78098aeb88aa7.
+
+[33mcommit a1ed97cf877f6bb0a33e3104fb336daf05b0e9fb[m
+Merge: 62c42d2 9afb1d6
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 18:48:53 2025 -0800
+
+    delete scene to complete pull request
+
+[33mcommit 3a7f8f3702e41e359e87b8ce9379caf8ad338456[m
+Merge: 8c82c3c ff7ea26
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 18:48:53 2025 -0800
+
+    delete scene to complete pull request
+
+[33mcommit 62c42d29f65b21dbae4e25b4a53edaad98480691[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 18:43:13 2025 -0800
+
+    debugging
+
+[33mcommit 8c82c3ca38a480a17d2c285c31a78098aeb88aa7[m
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 18:43:13 2025 -0800
+
+    debugging
+
+[33mcommit 9afb1d65eb45d8f82095d205ed6afd1b39bd6769[m
+Merge: 838af7d 9839841
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 21:33:33 2025 -0500
+
+    Merge remote-tracking branch 'origin/AmeliaaBranch' into Julien's-New-Branch
+
+[33mcommit ff7ea2623d979313de2a2bf701531f844d2a7055[m
+Merge: 0b15236 8cf5476
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 21:33:33 2025 -0500
+
+    Merge remote-tracking branch 'origin/AmeliaaBranch' into Julien's-New-Branch
+
+[33mcommit 838af7dbf8063e92e3cc0cc0500eaa58fe11da1a[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 21:32:25 2025 -0500
+
+    player animations
+
+[33mcommit 0b15236ed7c4fa5e62860fbfbbea558002c7390b[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 21:32:25 2025 -0500
+
+    player animations
+
+[33mcommit 8cf54765c87c4842994241c6c8db1595f1025cfb[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 21:14:07 2025 -0500
+
+    Level
+
+[33mcommit 9839841e0235cc645162b4fdcfeb8d814b1614ba[m[33m ([m[1;31morigin/AmeliaaBranch[m[33m)[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 21:14:07 2025 -0500
+
+    Level
+
+[33mcommit 54276e42991a3c13fed181b2cde22bd75a9b5b5f[m
+Merge: acfc74f ab3af34
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 20:05:21 2025 -0500
+
+    Merge remote-tracking branch 'origin/Naokyan_Branch' into Julien's-New-Branch
+
+[33mcommit fca45c6c7c9ce088d5dc8284a59389746869f405[m
+Merge: 9651a07 c4a23a3
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 20:05:21 2025 -0500
+
+    Merge remote-tracking branch 'origin/Naokyan_Branch' into Julien's-New-Branch
+
+[33mcommit 0d86a608cdff9e95ee50b247464b485c5ddfb1ba[m
+Merge: c8f75a8 c4a23a3
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 20:03:22 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaaBranch
+
+[33mcommit cb1ea06e08d7ec28093d6fc7c4bb9d3cb0cc51ef[m
+Merge: 3edf42c ab3af34
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 20:03:22 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaaBranch
+
+[33mcommit c8f75a8f15c5caefa970b9f7e70a7ee1ecb30ca7[m
+Merge: 8bf1629 9651a07
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 20:02:39 2025 -0500
+
+    Merge remote-tracking branch 'origin/Julien's-New-Branch' into AmeliaaBranch
+
+[33mcommit 3edf42cabcbe48712fe2dcfcb07107c11a78520f[m
+Merge: bd08219 acfc74f
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 20:02:39 2025 -0500
+
+    Merge remote-tracking branch 'origin/Julien's-New-Branch' into AmeliaaBranch
+
+[33mcommit 8bf162922406c07edc3b6832de84b071076dee6e[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 20:02:31 2025 -0500
+
+    A
+
+[33mcommit bd0821904f2ed31f4eb6b25c5e7064e8b7cfbfe3[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 20:02:31 2025 -0500
+
+    A
+
+[33mcommit acfc74f4213d98ca6c08d81b1b2e960fec3cee86[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 19:36:12 2025 -0500
+
+    .
+
+[33mcommit 9651a07de0aed1a1bcdb5a54f48e8fb5d60df1aa[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 19:36:12 2025 -0500
+
+    .
+
+[33mcommit 4ecc4b8539e1ec499597814f27dec4f20af931de[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 19:13:31 2025 -0500
+
+    added all art assets in the project
+
+[33mcommit 3fadd194c228a10fdb066a279de63ac54c3834d5[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 19:13:31 2025 -0500
+
+    added all art assets in the project
+
+[33mcommit 85187c338d0930e1461d854abf687d80c8cc8eee[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 19:09:07 2025 -0500
+
+    finalized the menu
+
+[33mcommit b8f9fd552b8d1e55fdfd3d81d1549efbd05fb9ea[m
+Author: Julien Chaput <jujul.ch@gmail.com>
+Date:   Thu Jan 30 19:09:07 2025 -0500
+
+    finalized the menu
+
+[33mcommit ab3af3475a66ea4f3428c56a5c3129e1ff98f39b[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 15:38:25 2025 -0800
+
+    debugging scene
+
+[33mcommit c4a23a37dc78f8a6644d96c2c75a99f42e03a3f4[m
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 15:38:25 2025 -0800
+
+    debugging scene
+
+[33mcommit 4ad66fe1bb29ad24fa7fc1bdfb8cb96ca02723ad[m
+Merge: 0ef0a23 1b36b10
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 18:33:25 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaBranch
+
+[33mcommit 27b53b0dcc8b9e2d9f8517c278759fe46a3bbb2a[m
+Merge: 62f7b93 519926a
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 18:33:25 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaBranch
+
+[33mcommit 1b36b10ab204ebcdfbc663d5f6ce1c14acea2fed[m
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Thu Jan 30 15:24:37 2025 -0800
+
+    debugging
+
+[33mcommit 519926a2d0ea8c6cafa767b226d0b59112d6dc25[m
+Author: Jiaqi-Wang-2024 <jwang945@usc.edu>
+Date:   Thu Jan 30 15:24:37 2025 -0800
+
+    debugging
+
+[33mcommit 62f7b9328f0efb4c2f0f5f198a7b30028823cfd1[m
+Merge: b104f05 c864229
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 17:25:04 2025 -0500
+
+    Merge remote-tracking branch 'origin/NitoVal_Branch' into AmeliaBranch
+
+[33mcommit 0ef0a23c5d1c5f73784b246fe3762667a5ef8f5c[m
+Merge: d98dd9a 59cee8e
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 17:25:04 2025 -0500
+
+    Merge remote-tracking branch 'origin/NitoVal_Branch' into AmeliaBranch
+
+[33mcommit b104f05a1c15d66e7334235eb00f6f3df134ac12[m
+Merge: 8d6b90c 681af5b
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 17:24:13 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaBranch
+
+[33mcommit d98dd9a0847e3c2e0a9ab96b8e840b3ce0baa336[m
+Merge: e54b95f a737500
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 17:24:13 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaBranch
+
+[33mcommit 8d6b90cb5e69e84de356c09d65fb44cf99585413[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 17:24:03 2025 -0500
+
+    WinScreen
+    
+    WinScreen added
+
+[33mcommit e54b95f76e37934e256281899edbf39537531b06[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 17:24:03 2025 -0500
+
+    WinScreen
+    
+    WinScreen added
+
+[33mcommit 3f5395eec7d5d8d890dba154673f4ac0466d1cc3[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 16:30:29 2025 -0500
+
+    Zone 3 finished
+
+[33mcommit e4f5a6af77847974156ceddd08c9221941d7180d[m
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 16:30:29 2025 -0500
+
+    Zone 3 finished
+
+[33mcommit 860fa1be991a0bec9c3c06c825b2bc300afd29f2[m
+Merge: 8931478 cafd385
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 13:57:46 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaBranch
+
+[33mcommit 29a5d4ce8b3ad5cce1bdbfc6cbbfb62d0827ca5b[m
+Merge: ed704ad 4ed754f
+Author: Darkchaton <ameliadulac12345@gmail.com>
+Date:   Thu Jan 30 13:57:46 2025 -0500
+
+    Merge branch 'Naokyan_Branch' into AmeliaBranch
+
+[33mcommit c8642293aadf0d787d44b08106b2aff81d6ab4a3[m
+Merge: aed0169 d9a4e6a
+Author: NitoVal <nitoval360@gmail.com>
+Date:   Thu Jan 30 08:16:23 2025 -0500
+
+    Merge branch 'NitoVal_Branch' of https://github.com/naokyan/PSgamejam16 into NitoVal_Branch
+
+[33mcommit 59cee8efe61e88b77ceaeeef8d4b041b65653def[m
+Merge: a517397 5631693
+Author: NitoVal <nitoval360@gmail.com>
+Date:   Thu Jan 30 08:16:23 2025 -0500
+
+    Merge branch 'NitoVal_Branch' of https://github.com/naokyan/PSgamejam16 into NitoVal_Branch
+
+[33mcommit aed01697d12bed65ae42e4470096171c8c9e2b83[m
+Author: NitoVal <nitoval360@gmail.com>
+Date:   Thu Jan 30 08:16:14 2025 -0500
+
+    added title image
+
+[33mcommit a517397c9e1d612ea861bdf964610376f854d433[m
+Author: NitoVal <nitoval360@gmail.com>
+Date:   Thu Jan 30 08:16:14 2025 -0500
+
+    added title image
+
+[33mcommit d9a4e6abdc7849a79bb2a452db4409ab4891c72c[m
+Author: francmartins <144833918+francmartins@users.noreply.github.com>
+Date:   Thu Jan 30 11:40:16 2025 +0000
+
+    Add files via upload
+
+[33mcommit 5631693581c2bd778d6f2ff7821a96787ff76e29[m
+Author: francmartins <144833918+francmartins@users.noreply.github.com>
+Date:   Thu Jan 30 11:40:16 2025 +0000
+
+    Add files via upload
+
+[33mcommit a73750036c74926acb2bbb5129e6c55bdb3be247[m
+Merge: 4ed754f ed704ad
+Author: naokyan <47100121+naokyan@users.noreply.github.com>
+Date:   Wed Jan 29 15:11:22 2025 -0800
+
+    Merge branch 'Julien's-New-Branch' into Naokyan_Branch
+
+[33mcommit 681af5b9494c61cb095b33cddbe3d305b0c71ef1[m
+Merge: cafd385 8931478
+Author: Jiaqi-W
